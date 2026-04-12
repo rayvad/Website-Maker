@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Monitor, IdCard, FileText, PenTool, Shirt, CheckCircle2, XCircle, ArrowRight, Zap, Mail, Phone, Copy, Sparkles, HeartHandshake } from 'lucide-react';
+import { Monitor, CheckCircle2, XCircle, ArrowRight, Zap, Mail, Phone, Copy, Sparkles, HeartHandshake, Target, Search, Layers } from 'lucide-react';
 
 const StarBackground = () => {
   const [stars] = useState(() => 
@@ -57,33 +57,6 @@ export default function App() {
     }
   };
 
-  const services = [
-    {
-      title: 'Business Cards',
-      price: '$10',
-      icon: <IdCard className="w-6 h-6 text-indigo-400" />,
-      description: 'Professional, custom-designed business cards to make a lasting impression.'
-    },
-    {
-      title: 'Flyers',
-      price: '$12',
-      icon: <FileText className="w-6 h-6 text-indigo-400" />,
-      description: 'Eye-catching flyers for your events, promotions, or business announcements.'
-    },
-    {
-      title: 'Logos',
-      price: '$15',
-      icon: <PenTool className="w-6 h-6 text-indigo-400" />,
-      description: 'Unique and memorable logo design that perfectly represents your brand identity.'
-    },
-    {
-      title: 'Merch Mock-ups',
-      price: '$20',
-      icon: <Shirt className="w-6 h-6 text-indigo-400" />,
-      description: 'High-quality mock-ups for t-shirts, hats, and other merchandise.'
-    }
-  ];
-
   // Animation Variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -105,15 +78,20 @@ export default function App() {
       <nav className="fixed top-0 w-full border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <motion.div 
-            className="flex items-center gap-2"
+            className="flex items-center gap-3"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-              <Zap className="w-5 h-5 text-white" />
+            <div className="relative w-10 h-10 flex items-center justify-center group cursor-pointer">
+              <div className="absolute inset-0 bg-indigo-500/20 border border-indigo-500/50 rounded-xl rotate-3 transition-transform group-hover:rotate-6" />
+              <div className="absolute inset-0 bg-indigo-500 rounded-xl -rotate-3 transition-transform group-hover:-rotate-6 shadow-lg shadow-indigo-500/20 flex items-center justify-center">
+                <Layers className="w-5 h-5 text-white" />
+              </div>
             </div>
-            <span className="font-display font-bold text-xl tracking-tight">Website maker</span>
+            <span className="font-display font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-400">
+              The Brand Blueprint
+            </span>
           </motion.div>
           <motion.div 
             className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400"
@@ -181,7 +159,7 @@ export default function App() {
           >
             Stunning websites for a <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-              flat fee of $275.
+              flat fee of $375.
             </span>
           </motion.h1>
           
@@ -207,7 +185,7 @@ export default function App() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Claim Your $275 Website <ArrowRight className="w-4 h-4" />
+              Claim Your $375 Website <ArrowRight className="w-4 h-4" />
             </motion.a>
             <motion.a 
               href="#services" 
@@ -288,10 +266,10 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">Website maker</h3>
+                <h3 className="text-2xl font-semibold text-white">The Brand Blueprint</h3>
               </div>
               <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-6xl font-display font-bold text-white">$275</span>
+                <span className="text-6xl font-display font-bold text-white">$375</span>
                 <span className="text-indigo-400 font-medium text-lg">total</span>
               </div>
               <ul className="space-y-5">
@@ -321,52 +299,159 @@ export default function App() {
         </div>
       </section>
 
-      {/* Other Services */}
+      {/* Services Pivot */}
       <section className="py-24 px-6 relative" id="services">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto space-y-16">
+          {/* Targeted Ad Management */}
           <motion.div 
-            className="text-center mb-16"
+            className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-lg"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">More Than Just Websites</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
-              Complete your brand identity with our affordable design services. 
-              Same straightforward pricing, no surprises.
-            </p>
+            <div className="flex-1 space-y-6">
+              <div className="w-16 h-16 rounded-2xl bg-indigo-500/20 flex items-center justify-center">
+                <Target className="w-8 h-8 text-indigo-400" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">Scale with Precision Ads</h2>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                Take your business to the next level with our completely done-for-you ad campaigns. <strong className="text-zinc-200">I will completely do everything for you to run the ads</strong>—from strategy to execution—so you will see instant growth without lifting a finger.
+              </p>
+              <div className="bg-zinc-950/50 border border-zinc-800/50 rounded-xl p-4 inline-block">
+                <p className="text-zinc-300 font-medium">
+                  <span className="text-indigo-400 font-bold mr-2">✓</span>
+                  Set a custom monthly ad budget up to $5,000
+                </p>
+              </div>
+              <div>
+                <motion.a 
+                  href="#contact" 
+                  className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-indigo-500/25 mt-4"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Start Your Campaign <ArrowRight className="w-4 h-4" />
+                </motion.a>
+              </div>
+            </div>
+            <div className="flex-1 w-full relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 blur-3xl rounded-full" />
+              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl overflow-hidden">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-2">
+                    <div className="h-4 w-4 bg-indigo-500 rounded-sm animate-pulse" />
+                    <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Active Campaign</div>
+                  </div>
+                  <div className="text-xs font-bold text-green-400 bg-green-400/10 px-3 py-1.5 rounded-full flex items-center gap-1 border border-green-400/20">
+                    <ArrowRight className="w-3 h-3 -rotate-45" /> INSTANT GROWTH
+                  </div>
+                </div>
+                
+                <div className="space-y-5 mb-8">
+                  <div className="space-y-2 w-full">
+                    <div className="flex justify-between text-xs font-medium">
+                      <span className="text-zinc-400">Impressions</span>
+                      <span className="text-indigo-400">+12,450</span>
+                    </div>
+                    <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '85%' }}
+                        transition={{ duration: 1.5, delay: 0.2 }}
+                        className="h-full bg-indigo-500 rounded-full" 
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2 w-full">
+                    <div className="flex justify-between text-xs font-medium">
+                      <span className="text-zinc-400">Conversions</span>
+                      <span className="text-purple-400">+342</span>
+                    </div>
+                    <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '65%' }}
+                        transition={{ duration: 1.5, delay: 0.4 }}
+                        className="h-full bg-purple-500 rounded-full" 
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex items-end gap-3 h-32 border-b border-zinc-800/50 pb-2">
+                  {[40, 60, 45, 80, 65, 95, 120].map((height, idx) => (
+                    <motion.div 
+                      key={idx}
+                      initial={{ height: 0 }}
+                      whileInView={{ height: `${height}%` }}
+                      transition={{ duration: 1, delay: idx * 0.1 }}
+                      className="flex-1 bg-gradient-to-t from-indigo-500/20 to-indigo-500 rounded-t-md" 
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </motion.div>
 
+          {/* SEO Domination */}
           <motion.div 
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-            variants={staggerContainer}
+            className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row-reverse items-center gap-12 shadow-lg"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
           >
-            {services.map((service, index) => (
-              <motion.div 
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="bg-zinc-900/40 border border-zinc-800 hover:border-indigo-500/50 rounded-[2rem] p-8 transition-all group flex flex-col shadow-lg hover:shadow-indigo-500/10"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-zinc-800 group-hover:bg-indigo-500/20 flex items-center justify-center mb-6 transition-colors">
-                  {service.icon}
+            <div className="flex-1 space-y-6">
+              <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center">
+                <Search className="w-8 h-8 text-cyan-400" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">Search Engine Optimization (SEO)</h2>
+              <p className="text-zinc-400 text-lg leading-relaxed">
+                Stop being invisible. <strong className="text-zinc-200">I will completely handle your SEO for you</strong>, optimizing your digital footprint so your business climbs the rankings and claims the #1 spot on the search bar.
+              </p>
+              <div>
+                <motion.a 
+                  href="#contact" 
+                  className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-zinc-900/50 mt-4"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Boost Your Ranking <ArrowRight className="w-4 h-4" />
+                </motion.a>
+              </div>
+            </div>
+            <div className="flex-1 w-full relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 blur-3xl rounded-full" />
+              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl">
+                <div className="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
+                  <Search className="w-5 h-5 text-zinc-500" />
+                  <div className="h-4 w-48 bg-zinc-800 rounded-full" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                <p className="text-zinc-400 text-sm mb-8 leading-relaxed flex-grow">
-                  {service.description}
-                </p>
-                <div className="mt-auto flex items-end justify-between pt-6 border-t border-zinc-800/50">
-                  <span className="text-3xl font-display font-bold text-white">{service.price}</span>
-                  <a href="#contact" className="text-indigo-400 text-sm font-medium hover:text-indigo-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Order <ArrowRight className="w-4 h-4" />
-                  </a>
+                <div className="space-y-6">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        {i === 1 ? (
+                          <>
+                            <span className="text-xs font-bold text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded border border-cyan-400/20 shadow-[0_0_10px_rgba(34,211,238,0.2)]">#1</span>
+                            <div className="text-sm font-bold text-cyan-300 tracking-wide">YOUR BUSINESS</div>
+                            <div className="h-4 w-24 bg-cyan-500/30 rounded-full ml-2" />
+                          </>
+                        ) : (
+                          <>
+                            <span className="text-xs font-bold text-zinc-500 bg-zinc-800 px-2.5 py-1 rounded">#{i}</span>
+                            <div className="h-4 w-32 bg-zinc-700 rounded-full" />
+                          </>
+                        )}
+                      </div>
+                      <div className={`h-2 w-full rounded-full ${i === 1 ? 'bg-cyan-500/20' : 'bg-zinc-800'}`} />
+                      <div className={`h-2 rounded-full ${i === 1 ? 'w-5/6 bg-cyan-500/20' : 'w-2/3 bg-zinc-800'}`} />
+                    </div>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -385,7 +470,7 @@ export default function App() {
             Ready to get started?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Stop overpaying for web design. Get a professional website for $275 flat, or elevate your brand with our affordable design services. We'd love to hear from you!
+            Stop overpaying for web design. Get a professional website for $375 flat, or elevate your brand with our affordable design services. We'd love to hear from you!
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
@@ -442,7 +527,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-zinc-800/50 text-center text-zinc-500 text-sm relative z-10 bg-zinc-950">
-        <p>&copy; {new Date().getFullYear()} Website maker. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} The Brand Blueprint. All rights reserved.</p>
       </footer>
     </div>
   );
