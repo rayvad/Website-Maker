@@ -1,45 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Monitor, CheckCircle2, XCircle, ArrowRight, Zap, Mail, Phone, Copy, Sparkles, HeartHandshake, Target, Search, Layers } from 'lucide-react';
+import { Monitor, CheckCircle2, XCircle, ArrowRight, Zap, Mail, Phone, Copy, Sparkles, HeartHandshake, Target, Search, Layers, Share2, Star, Crown, Rocket, TrendingUp } from 'lucide-react';
 
-const StarBackground = () => {
-  const [stars] = useState(() => 
-    Array.from({ length: 70 }).map(() => ({
-      id: Math.random(),
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() * 2 + 1,
-      delay: Math.random() * 5,
-      duration: Math.random() * 4 + 3,
-      opacity: Math.random() * 0.6 + 0.4
-    }))
-  );
-
-  return (
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {stars.map((star) => (
-        <motion.div
-          key={star.id}
-          className="absolute bg-white rounded-full"
-          style={{
-            top: star.top,
-            left: star.left,
-            width: star.size,
-            height: star.size,
-          }}
-          animate={{ opacity: [0.1, star.opacity, 0.1] }}
-          transition={{
-            duration: star.duration,
-            repeat: Infinity,
-            delay: star.delay,
-            ease: "easeInOut",
-            times: [0, 0.5, 1]
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+const ModernBackground = () => (
+  <div className="fixed inset-0 z-0 pointer-events-none">
+    {/* Grid pattern */}
+    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150"></div>
+    <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+  </div>
+);
 
 export default function App() {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -72,10 +41,29 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-50 selection:bg-indigo-500/30 overflow-x-hidden">
-      <StarBackground />
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 selection:bg-indigo-500/30 overflow-x-hidden pt-10">
+      <ModernBackground />
+      {/* Top Contact Banner */}
+      <div className="fixed top-0 w-full bg-gradient-to-r from-indigo-600 via-purple-500 to-indigo-600 text-white z-[60] text-sm font-medium border-b border-indigo-400/30">
+        <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <span className="hidden sm:flex items-center gap-2">
+              <Mail className="w-4 h-4 text-indigo-100" />
+              rayanvadsariya15@gmail.com
+            </span>
+            <span className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-indigo-100" />
+              (205) 864-8814
+            </span>
+          </div>
+          <span className="font-semibold text-amber-200 flex items-center gap-1">
+            <Sparkles className="w-4 h-4" /> Open for new clients
+          </span>
+        </div>
+      </div>
+      
       {/* Navigation */}
-      <nav className="fixed top-0 w-full border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-md z-50">
+      <nav className="fixed top-10 w-full border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <motion.div 
             className="flex items-center gap-3"
@@ -85,8 +73,8 @@ export default function App() {
           >
             <div className="relative w-10 h-10 flex items-center justify-center group cursor-pointer">
               <div className="absolute inset-0 bg-indigo-500/20 border border-indigo-500/50 rounded-xl rotate-3 transition-transform group-hover:rotate-6" />
-              <div className="absolute inset-0 bg-indigo-500 rounded-xl -rotate-3 transition-transform group-hover:-rotate-6 shadow-lg shadow-indigo-500/20 flex items-center justify-center">
-                <Layers className="w-5 h-5 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-indigo-600 to-cyan-500 rounded-xl -rotate-3 transition-transform group-hover:-rotate-6 shadow-lg shadow-indigo-500/20 flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-white" />
               </div>
             </div>
             <span className="font-display font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-400">
@@ -118,7 +106,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-24 px-6 relative">
+      <section className="pt-32 pb-24 px-6 relative">
         {/* Animated Background Blobs */}
         <motion.div 
           animate={{ 
@@ -147,7 +135,7 @@ export default function App() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-medium mb-8 border border-indigo-500/20 shadow-sm">
               <Sparkles className="w-4 h-4" />
-              Friendly, transparent pricing. 👋
+              Your partner in digital growth. 👋
             </span>
           </motion.div>
           
@@ -157,9 +145,9 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Stunning websites for a <br className="hidden md:block" />
+            Dominate your market with <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-              flat fee of $375.
+              expert digital growth.
             </span>
           </motion.h1>
           
@@ -169,8 +157,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Other designers charge $500 to $800 and sneak in monthly fees. 
-            We build you a professional website for one flat price. No monthly charges, no nothing. Just great design.
+            From managing your social media presence to building stunning websites, running precision ads, and dominating SEO, we provide a complete suite of done-for-you services to scale your business.
           </motion.p>
           
           <motion.div 
@@ -180,12 +167,12 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <motion.a 
-              href="#contact" 
+              href="#social-media" 
               className="w-full sm:w-auto bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold flex items-center justify-center gap-2 transition-colors shadow-lg shadow-indigo-500/25"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Claim Your $375 Website <ArrowRight className="w-4 h-4" />
+              View Social Media Packages <ArrowRight className="w-4 h-4" />
             </motion.a>
             <motion.a 
               href="#services" 
@@ -193,7 +180,7 @@ export default function App() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View Other Services
+              Explore All Services
             </motion.a>
           </motion.div>
         </div>
@@ -210,9 +197,9 @@ export default function App() {
             variants={fadeInUp}
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center justify-center gap-3">
-              The Truth About Web Design <HeartHandshake className="w-8 h-8 text-indigo-400" />
+              Stunning Websites. One Flat Fee. <HeartHandshake className="w-8 h-8 text-indigo-400" />
             </h2>
-            <p className="text-zinc-400 text-lg">Don't get trapped in expensive contracts. We keep it friendly and fair.</p>
+            <p className="text-zinc-400 text-lg">Don't get trapped in expensive retainers to get a website. We keep it friendly and fair.</p>
           </motion.div>
 
           <motion.div 
@@ -231,18 +218,18 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center">
                   <XCircle className="w-6 h-6 text-red-500" />
                 </div>
-                <h3 className="text-2xl font-semibold text-zinc-300">Other Designers</h3>
+                <h3 className="text-2xl font-semibold text-zinc-300">Other Agencies</h3>
               </div>
               <div className="text-4xl font-display font-bold text-zinc-500 mb-8 line-through decoration-red-500/50">
-                $500 - $800+
+                $1,500 - $3,000+
               </div>
               <ul className="space-y-5">
                 {[
-                  'High upfront costs',
-                  'Surprise monthly maintenance fees',
-                  'Charge extra for basic changes',
-                  'Complicated contracts',
-                  'Hidden hosting markups'
+                  'Exorbitant monthly retainers',
+                  'Takes weeks or months to build',
+                  'Charge thousands for basic websites',
+                  'Complicated long-term contracts',
+                  'Zero actual growth guarantee'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-zinc-400">
                     <XCircle className="w-5 h-5 text-red-500/50 shrink-0 mt-0.5" />
@@ -258,8 +245,8 @@ export default function App() {
               className="bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/30 rounded-[2rem] p-8 relative overflow-hidden shadow-2xl shadow-indigo-500/5"
             >
               <div className="absolute top-0 right-0 p-5">
-                <span className="bg-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-indigo-500/20">
-                  Best Value
+                <span className="bg-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-indigo-500/20 flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" /> BEST VALUE
                 </span>
               </div>
               <div className="flex items-center gap-3 mb-6">
@@ -269,22 +256,33 @@ export default function App() {
                 <h3 className="text-2xl font-semibold text-white">The Brand Blueprint</h3>
               </div>
               <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-6xl font-display font-bold text-white">$375</span>
-                <span className="text-indigo-400 font-medium text-lg">total</span>
+                <span className="text-5xl md:text-6xl font-display font-bold text-white">$475</span>
+                <span className="text-indigo-400 font-medium text-lg">flat fee</span>
               </div>
               <ul className="space-y-5">
-                {[
-                  'One-time flat fee',
-                  'Zero monthly charges',
-                  'No hidden fees, no nothing',
-                  'Professional, modern design',
-                  'Mobile-friendly & responsive'
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-zinc-200">
-                    <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
+                <li className="flex items-start gap-3 text-zinc-200">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="font-bold text-amber-300 flex items-center flex-wrap gap-1 leading-relaxed text-lg">
+                    <Crown className="w-5 h-5 text-amber-400 fill-amber-400/20 shrink-0" />
+                    Includes 1 FREE Custom Logo
+                  </span>
+                </li>
+                <li className="flex items-start gap-3 text-zinc-200">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span>Delivered rapidly in <strong>24 hours</strong> once started</span>
+                </li>
+                <li className="flex items-start gap-3 text-zinc-200">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span>Modern, brand-new, and better than competitors</span>
+                </li>
+                <li className="flex items-start gap-3 text-zinc-200">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span><strong>Zero monthly fees</strong>, just a one-time flat fee</span>
+                </li>
+                <li className="flex items-start gap-3 text-zinc-200">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span>Completely custom tailored to your business info</span>
+                </li>
               </ul>
               <motion.a 
                 href="#contact" 
@@ -292,8 +290,149 @@ export default function App() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Get Your Website
+                Start Growing Today
               </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Social Media Packages */}
+      <section className="py-24 px-6 relative" id="social-media">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-500/20 mb-6">
+              <Share2 className="w-8 h-8 text-indigo-400" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Complete Social Media Management</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
+              We take full control of your social channels. Engaging content, consistent posting, and strategic community management to turn followers into loyal customers.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
+            {/* Starter */}
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 flex flex-col hover:border-indigo-500/50 transition-colors"
+            >
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2">
+                  <Star className="w-5 h-5 text-indigo-400" /> Starter <span className="text-zinc-500 text-sm font-normal">(Basic)</span>
+                </h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-display font-bold text-white">$275 - $350</span>
+                  <span className="text-zinc-400">/mo</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300"><strong className="text-white">10 posts</strong> per month</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Content creation & copy</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Basic community management</span>
+                </li>
+              </ul>
+              <a href="#contact" className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-semibold transition-colors">
+                Select Starter
+              </a>
+            </motion.div>
+
+            {/* Premium */}
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/50 rounded-[2rem] p-8 flex flex-col relative shadow-xl shadow-indigo-500/10"
+            >
+              <div className="absolute top-0 right-8 -translate-y-1/2">
+                <span className="bg-indigo-500 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full shadow-lg">
+                  Most Popular
+                </span>
+              </div>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2">
+                  <Crown className="w-5 h-5 text-indigo-400" /> Premium <span className="text-zinc-400 text-sm font-normal">(Standard)</span>
+                </h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-display font-bold text-white">$495 - $585</span>
+                  <span className="text-zinc-400">/mo</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300"><strong className="text-white">18–20 posts</strong> per month</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Premium visual design & copy</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Proactive community engagement</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Monthly performance report</span>
+                </li>
+              </ul>
+              <a href="#contact" className="w-full block text-center bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-xl font-semibold transition-colors shadow-lg shadow-indigo-500/25">
+                Select Premium
+              </a>
+            </motion.div>
+
+            {/* Platinum */}
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 flex flex-col hover:border-indigo-500/50 transition-colors"
+            >
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2">
+                  <Rocket className="w-5 h-5 text-indigo-400" /> Platinum <span className="text-zinc-500 text-sm font-normal">(Scale)</span>
+                </h3>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-display font-bold text-white">$800+</span>
+                  <span className="text-zinc-400">/mo</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300"><strong className="text-white">30 posts</strong> per month</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Comprehensive strategy & calendar</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Full reputation management</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                  <span className="text-zinc-300">Story & reel creation included</span>
+                </li>
+              </ul>
+              <a href="#contact" className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-semibold transition-colors">
+                Select Platinum
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -302,6 +441,20 @@ export default function App() {
       {/* Services Pivot */}
       <section className="py-24 px-6 relative" id="services">
         <div className="max-w-7xl mx-auto space-y-16">
+          {/* Website Bundle Notice */}
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeInUp}
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Complete Digital Domination</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto text-lg mb-8">
+              In addition to social media, we offer the essential tools required to convert traffic and capture leads. Oh, and about that <strong className="text-white">$475 flat-fee website</strong>? It’s still here.
+            </p>
+          </motion.div>
+
           {/* Targeted Ad Management */}
           <motion.div 
             className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-lg"
@@ -316,18 +469,28 @@ export default function App() {
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold">Scale with Precision Ads</h2>
               <p className="text-zinc-400 text-lg leading-relaxed">
-                Take your business to the next level with our completely done-for-you ad campaigns. <strong className="text-zinc-200">I will completely do everything for you to run the ads</strong>—from strategy to execution—so you will see instant growth without lifting a finger.
+                Take your business to the next level with our completely done-for-you ad campaigns on a custom monthly budget. <strong className="text-zinc-200">I will completely do everything for you to run the ads</strong>—from strategy to execution—so you will see instant growth without lifting a finger.
               </p>
-              <div className="bg-zinc-950/50 border border-zinc-800/50 rounded-xl p-4 inline-block">
-                <p className="text-zinc-300 font-medium">
-                  <span className="text-indigo-400 font-bold mr-2">✓</span>
-                  Set a custom monthly ad budget up to $5,000
-                </p>
+              <div className="bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/30 rounded-[1.5rem] p-6 relative overflow-hidden shadow-lg mt-2">
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-5xl font-display font-bold text-white">$500</span>
+                  <span className="text-indigo-400 font-medium text-lg">/mo management</span>
+                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 text-zinc-300 text-sm md:text-base">
+                    <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
+                    <span>Management fee scales depending on your desired monthly ad spend</span>
+                  </li>
+                </ul>
               </div>
-              <div>
+              <div className="inline-flex items-center gap-2 text-amber-300 font-bold text-base md:text-lg bg-amber-500/10 border border-amber-500/30 px-5 py-3 rounded-xl shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/20">
+                <Crown className="w-6 h-6 text-amber-400 fill-amber-400/20 shrink-0" />
+                Guaranteed growth in the first week of the ads being live
+              </div>
+              <div className="pt-2">
                 <motion.a 
                   href="#contact" 
-                  className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-indigo-500/25 mt-4"
+                  className="inline-flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-indigo-500/25"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -337,49 +500,63 @@ export default function App() {
             </div>
             <div className="flex-1 w-full relative">
               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 blur-3xl rounded-full" />
-              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl overflow-hidden">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center gap-2">
-                    <div className="h-4 w-4 bg-indigo-500 rounded-sm animate-pulse" />
-                    <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Active Campaign</div>
-                  </div>
-                  <div className="text-xs font-bold text-green-400 bg-green-400/10 px-3 py-1.5 rounded-full flex items-center gap-1 border border-green-400/20">
-                    <ArrowRight className="w-3 h-3 -rotate-45" /> INSTANT GROWTH
-                  </div>
-                </div>
-                
-                <div className="space-y-5 mb-8">
-                  <div className="space-y-2 w-full">
-                    <div className="flex justify-between text-xs font-medium">
-                      <span className="text-zinc-400">Impressions</span>
-                      <span className="text-indigo-400">+12,450</span>
+              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center gap-2">
+                      <div className="h-4 w-4 bg-indigo-500 rounded-sm animate-pulse" />
+                      <div className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Active Campaign</div>
                     </div>
-                    <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '85%' }}
-                        transition={{ duration: 1.5, delay: 0.2 }}
-                        className="h-full bg-indigo-500 rounded-full" 
-                      />
+                    <div className="text-xs font-bold text-green-400 bg-green-400/10 px-3 py-1.5 rounded-full flex items-center gap-1 border border-green-400/20">
+                      <ArrowRight className="w-3 h-3 -rotate-45" /> INSTANT GROWTH
                     </div>
                   </div>
-                  <div className="space-y-2 w-full">
-                    <div className="flex justify-between text-xs font-medium">
-                      <span className="text-zinc-400">Conversions</span>
-                      <span className="text-purple-400">+342</span>
+                  
+                  {/* Results Replica */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="mb-8"
+                  >
+                    <div className="flex rounded-lg overflow-hidden shadow-xl shadow-black/50 border border-zinc-800/50">
+                      <div className="flex-1 bg-[#1a73e8] p-5">
+                        <div className="text-white/90 text-xs font-medium mb-1 flex items-center gap-1">
+                          Clicks <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div className="text-white text-4xl font-display tracking-tight">1.28K</div>
+                      </div>
+                      <div className="flex-1 bg-[#d93025] p-5">
+                        <div className="text-white/90 text-xs font-medium mb-1 flex items-center gap-1">
+                          Impressions <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M7 10l5 5 5-5z"/></svg>
+                        </div>
+                        <div className="text-white text-4xl font-display tracking-tight">86.8K</div>
+                      </div>
                     </div>
-                    <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: '65%' }}
-                        transition={{ duration: 1.5, delay: 0.4 }}
-                        className="h-full bg-purple-500 rounded-full" 
-                      />
+                    <p className="text-xs text-center text-zinc-400 mt-4 italic">
+                      Results from these exact metrics achieved within <strong className="text-zinc-200">one week</strong>.
+                    </p>
+                  </motion.div>
+
+                  <div className="space-y-5 mb-8">
+                    <div className="space-y-2 w-full">
+                      <div className="flex justify-between text-xs font-medium">
+                        <span className="text-zinc-400">Activity Level</span>
+                        <span className="text-indigo-400">Peak Performance</span>
+                      </div>
+                      <div className="h-2.5 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          whileInView={{ width: '85%' }}
+                          transition={{ duration: 1.5, delay: 0.4 }}
+                          className="h-full bg-indigo-500 rounded-full" 
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-end gap-3 h-32 border-b border-zinc-800/50 pb-2">
+                <div className="mt-8 flex items-end gap-3 h-24 border-b border-zinc-800/50 pb-2">
                   {[40, 60, 45, 80, 65, 95, 120].map((height, idx) => (
                     <motion.div 
                       key={idx}
@@ -410,6 +587,11 @@ export default function App() {
               <p className="text-zinc-400 text-lg leading-relaxed">
                 Stop being invisible. <strong className="text-zinc-200">I will completely handle your SEO for you</strong>, optimizing your digital footprint so your business climbs the rankings and claims the #1 spot on the search bar.
               </p>
+              <div className="mt-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-4 inline-block">
+                <p className="text-cyan-300 font-bold">
+                  Included for FREE with our Precision Ad Management package.
+                </p>
+              </div>
               <div>
                 <motion.a 
                   href="#contact" 
@@ -458,7 +640,9 @@ export default function App() {
 
       {/* CTA Section */}
       <section className="py-32 px-6 relative overflow-hidden" id="contact">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-500/10" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-zinc-950 to-zinc-950 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none border border-white" />
+        
         <motion.div 
           className="max-w-4xl mx-auto text-center relative z-10"
           initial="hidden"
@@ -466,59 +650,68 @@ export default function App() {
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.h2 variants={fadeInUp} className="text-4xl md:text-6xl font-display font-bold mb-6">
-            Ready to get started?
+          <motion.div variants={fadeInUp} className="inline-flex items-center justify-center space-x-2 bg-indigo-500/20 border border-indigo-500/50 rounded-full px-6 py-2 mb-8 shadow-[0_0_30px_rgba(99,102,241,0.4)]">
+             <span className="relative flex h-3 w-3 mr-2">
+               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+               <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-500"></span>
+             </span>
+             <span className="font-bold text-indigo-300 uppercase tracking-widest text-sm">Available For Contact NOW</span>
+          </motion.div>
+
+          <motion.h2 variants={fadeInUp} className="text-5xl md:text-7xl font-display font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-400">
+            Ready to completely scale?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Stop overpaying for web design. Get a professional website for $375 flat, or elevate your brand with our affordable design services. We'd love to hear from you!
+            Stop guessing what works. Whether you need expert social media management, a $475 flat-rate website, precision ads, or SEO domination, we've got you covered.
           </motion.p>
           
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
-            <div className="flex items-stretch gap-2 w-full sm:w-auto">
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 relative">
+            <div className="absolute inset-0 bg-indigo-500/5 rounded-[3rem] blur-xl -z-10 animate-pulse border border-indigo-500/50"></div>
+            <div className="flex items-stretch gap-2 w-full sm:w-auto z-10">
               <a 
                 href="mailto:rayanvadsariya15@gmail.com" 
-                className="flex items-center gap-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-indigo-500/50 px-6 py-5 rounded-[1.5rem] transition-all group flex-grow shadow-lg"
+                className="flex items-center gap-4 bg-zinc-900/80 hover:bg-indigo-900/40 border-2 border-indigo-500/30 hover:border-indigo-400 px-8 py-6 rounded-[2rem] transition-all group flex-grow shadow-[0_0_30px_rgba(99,102,241,0.15)] ring-1 ring-indigo-500/20"
               >
-                <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <Mail className="w-6 h-6 text-indigo-400" />
+                <div className="w-16 h-16 rounded-full bg-indigo-500/30 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0 border border-indigo-400/50">
+                  <Mail className="w-8 h-8 text-indigo-300" />
                 </div>
                 <div className="text-left">
-                  <div className="text-sm text-zinc-400 mb-0.5">Email Us</div>
-                  <div className="font-medium text-zinc-50">rayanvadsariya15@gmail.com</div>
+                  <div className="text-sm font-bold text-indigo-400 mb-1 uppercase tracking-wider">Email Us Directly</div>
+                  <div className="text-lg font-bold text-white">rayanvadsariya15@gmail.com</div>
                 </div>
               </a>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={(e) => handleCopy('rayanvadsariya15@gmail.com', 'email', e)}
-                className="px-5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-indigo-500/50 rounded-[1.5rem] transition-all text-zinc-400 hover:text-indigo-400 flex items-center justify-center shrink-0 shadow-lg"
+                className="px-6 bg-zinc-900/80 hover:bg-indigo-900/40 border-2 border-indigo-500/30 hover:border-indigo-400 rounded-[2rem] transition-all text-zinc-400 hover:text-indigo-300 flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(99,102,241,0.15)]"
                 title="Copy Email"
               >
-                {copiedEmail ? <CheckCircle2 className="w-5 h-5 text-green-400" /> : <Copy className="w-5 h-5" />}
+                {copiedEmail ? <CheckCircle2 className="w-6 h-6 text-green-400" /> : <Copy className="w-6 h-6" />}
               </motion.button>
             </div>
             
-            <div className="flex items-stretch gap-2 w-full sm:w-auto">
+            <div className="flex items-stretch gap-2 w-full sm:w-auto z-10">
               <a 
                 href="tel:+12058648814" 
-                className="flex items-center gap-4 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-indigo-500/50 px-6 py-5 rounded-[1.5rem] transition-all group flex-grow shadow-lg"
+                className="flex items-center gap-4 bg-zinc-900/80 hover:bg-indigo-900/40 border-2 border-indigo-500/30 hover:border-indigo-400 px-8 py-6 rounded-[2rem] transition-all group flex-grow shadow-[0_0_30px_rgba(99,102,241,0.15)] ring-1 ring-indigo-500/20"
               >
-                <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                  <Phone className="w-6 h-6 text-indigo-400" />
+                <div className="w-16 h-16 rounded-full bg-indigo-500/30 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0 border border-indigo-400/50">
+                  <Phone className="w-8 h-8 text-indigo-300" />
                 </div>
                 <div className="text-left">
-                  <div className="text-sm text-zinc-400 mb-0.5">Call or Text</div>
-                  <div className="font-medium text-zinc-50">(205) 864-8814</div>
+                  <div className="text-sm font-bold text-indigo-400 mb-1 uppercase tracking-wider">Call or Text Us</div>
+                  <div className="text-lg font-bold text-white">(205) 864-8814</div>
                 </div>
               </a>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={(e) => handleCopy('(205) 864-8814', 'phone', e)}
-                className="px-5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-indigo-500/50 rounded-[1.5rem] transition-all text-zinc-400 hover:text-indigo-400 flex items-center justify-center shrink-0 shadow-lg"
+                className="px-6 bg-zinc-900/80 hover:bg-indigo-900/40 border-2 border-indigo-500/30 hover:border-indigo-400 rounded-[2rem] transition-all text-zinc-400 hover:text-indigo-300 flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(99,102,241,0.15)]"
                 title="Copy Phone Number"
               >
-                {copiedPhone ? <CheckCircle2 className="w-5 h-5 text-green-400" /> : <Copy className="w-5 h-5" />}
+                {copiedPhone ? <CheckCircle2 className="w-6 h-6 text-green-400" /> : <Copy className="w-6 h-6" />}
               </motion.button>
             </div>
           </motion.div>
