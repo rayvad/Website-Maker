@@ -78,7 +78,7 @@ export default function App() {
               </div>
             </div>
             <span className="font-display font-bold text-2xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-400">
-              The Brand Blueprint
+              The Brand Bluprint
             </span>
           </motion.div>
           <motion.div 
@@ -253,7 +253,7 @@ export default function App() {
                 <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center">
                   <CheckCircle2 className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white">The Brand Blueprint</h3>
+                <h3 className="text-2xl font-semibold text-white">The Brand Bluprint</h3>
               </div>
               <div className="flex items-baseline gap-2 mb-8">
                 <span className="text-5xl md:text-6xl font-display font-bold text-white">$475</span>
@@ -666,7 +666,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-zinc-800/50 text-center text-zinc-500 text-sm relative z-10 bg-zinc-950">
-        <p>&copy; {new Date().getFullYear()} The Brand Blueprint. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} The Brand Bluprint. All rights reserved.</p>
       </footer>
     </div>
   );
