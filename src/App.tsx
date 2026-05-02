@@ -483,7 +483,16 @@ export default function App() {
                   </li>
                 </ul>
               </div>
-              <div className="inline-flex items-center gap-2 text-amber-300 font-bold text-base md:text-lg bg-amber-500/10 border border-amber-500/30 px-5 py-3 rounded-xl shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/20">
+              <div className="mt-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-5 shadow-lg shadow-cyan-500/10 ring-1 ring-cyan-500/20">
+                <p className="text-cyan-300 font-bold text-lg leading-snug flex items-start gap-3">
+                  <Search className="w-7 h-7 shrink-0 text-cyan-400 mt-0.5" />
+                  <span>
+                    <span className="block text-xl text-cyan-200 mb-1">Includes Complete SEO & Keyword Management</span>
+                    We handle all the highly targeted keywords to reach your exact audience.
+                  </span>
+                </p>
+              </div>
+              <div className="mt-4 inline-flex items-center gap-2 text-amber-300 font-bold text-base md:text-lg bg-amber-500/10 border border-amber-500/30 px-5 py-3 rounded-xl shadow-lg shadow-amber-500/10 ring-1 ring-amber-500/20">
                 <Crown className="w-6 h-6 text-amber-400 fill-amber-400/20 shrink-0" />
                 Guaranteed growth in the first week of the ads being live
               </div>
@@ -571,70 +580,7 @@ export default function App() {
             </div>
           </motion.div>
 
-          {/* SEO Domination */}
-          <motion.div 
-            className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row-reverse items-center gap-12 shadow-lg"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
-          >
-            <div className="flex-1 space-y-6">
-              <div className="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center">
-                <Search className="w-8 h-8 text-cyan-400" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Search Engine Optimization (SEO)</h2>
-              <p className="text-zinc-400 text-lg leading-relaxed">
-                Stop being invisible. <strong className="text-zinc-200">I will completely handle your SEO for you</strong>, optimizing your digital footprint so your business climbs the rankings and claims the #1 spot on the search bar.
-              </p>
-              <div className="mt-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-4 inline-block">
-                <p className="text-cyan-300 font-bold">
-                  Included for FREE with our Precision Ad Management package.
-                </p>
-              </div>
-              <div>
-                <motion.a 
-                  href="#contact" 
-                  className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-8 py-4 rounded-full font-semibold transition-colors shadow-lg shadow-zinc-900/50 mt-4"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Boost Your Ranking <ArrowRight className="w-4 h-4" />
-                </motion.a>
-              </div>
-            </div>
-            <div className="flex-1 w-full relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 blur-3xl rounded-full" />
-              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl">
-                <div className="flex items-center gap-4 mb-6 border-b border-zinc-800 pb-4">
-                  <Search className="w-5 h-5 text-zinc-500" />
-                  <div className="h-4 w-48 bg-zinc-800 rounded-full" />
-                </div>
-                <div className="space-y-6">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        {i === 1 ? (
-                          <>
-                            <span className="text-xs font-bold text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded border border-cyan-400/20 shadow-[0_0_10px_rgba(34,211,238,0.2)]">#1</span>
-                            <div className="text-sm font-bold text-cyan-300 tracking-wide">YOUR BUSINESS</div>
-                            <div className="h-4 w-24 bg-cyan-500/30 rounded-full ml-2" />
-                          </>
-                        ) : (
-                          <>
-                            <span className="text-xs font-bold text-zinc-500 bg-zinc-800 px-2.5 py-1 rounded">#{i}</span>
-                            <div className="h-4 w-32 bg-zinc-700 rounded-full" />
-                          </>
-                        )}
-                      </div>
-                      <div className={`h-2 w-full rounded-full ${i === 1 ? 'bg-cyan-500/20' : 'bg-zinc-800'}`} />
-                      <div className={`h-2 rounded-full ${i === 1 ? 'w-5/6 bg-cyan-500/20' : 'w-2/3 bg-zinc-800'}`} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
         </div>
       </section>
 
@@ -662,7 +608,7 @@ export default function App() {
             Ready to completely scale?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Stop guessing what works. Whether you need expert social media management, a $475 flat-rate website, precision ads, or SEO domination, we've got you covered.
+            Stop guessing what works. Whether you need expert social media management, a $475 flat-rate website, or precision ads, we've got you covered.
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 relative">
