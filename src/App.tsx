@@ -221,7 +221,7 @@ export default function App() {
                 <h3 className="text-2xl font-semibold text-zinc-300">Other Agencies</h3>
               </div>
               <div className="text-4xl font-display font-bold text-zinc-500 mb-8 line-through decoration-red-500/50">
-                $1,500 - $3,000+
+                $2,000 - $3,000+
               </div>
               <ul className="space-y-5">
                 {[
@@ -256,7 +256,7 @@ export default function App() {
                 <h3 className="text-2xl font-semibold text-white">The Brand Bluprint</h3>
               </div>
               <div className="flex items-baseline gap-2 mb-8">
-                <span className="text-5xl md:text-6xl font-display font-bold text-white">$475</span>
+                <span className="text-5xl md:text-6xl font-display font-bold text-white">$599</span>
                 <span className="text-indigo-400 font-medium text-lg">flat fee</span>
               </div>
               <ul className="space-y-5">
@@ -451,7 +451,7 @@ export default function App() {
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Complete Digital Domination</h2>
             <p className="text-zinc-400 max-w-2xl mx-auto text-lg mb-8">
-              In addition to social media, we offer the essential tools required to convert traffic and capture leads. Oh, and about that <strong className="text-white">$475 flat-fee website</strong>? It’s still here.
+              In addition to social media, we offer the essential tools required to convert traffic and capture leads. Oh, and about that <strong className="text-white">$599 flat-fee website</strong>? It’s still here.
             </p>
           </motion.div>
 
@@ -608,7 +608,7 @@ export default function App() {
             Ready to completely scale?
           </motion.h2>
           <motion.p variants={fadeInUp} className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
-            Stop guessing what works. Whether you need expert social media management, a $475 flat-rate website, or precision ads, we've got you covered.
+            Stop guessing what works. Whether you need expert social media management, a $599 flat-rate website, or precision ads, we've got you covered.
           </motion.p>
           
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 relative">
