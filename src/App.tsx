@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Monitor, CheckCircle2, XCircle, ArrowRight, Zap, Mail, Phone, Copy, Sparkles, HeartHandshake, Target, Search, Layers, Share2, Star, Crown, Rocket, TrendingUp } from 'lucide-react';
+import { Monitor, CheckCircle2, XCircle, ArrowRight, Zap, Mail, Phone, Copy, Sparkles, HeartHandshake, Target, Search, Layers, Share2, Star, Crown, Rocket, TrendingUp, Bot, Clock, PhoneMissed, PhoneCall, Mic } from 'lucide-react';
 
 const ModernBackground = () => (
   <div className="fixed inset-0 z-0 pointer-events-none">
@@ -294,6 +294,185 @@ export default function App() {
               </motion.a>
             </motion.div>
           </motion.div>
+          
+          <motion.div 
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-16 flex flex-col items-center justify-center p-6 border border-zinc-800/60 bg-zinc-900/30 rounded-2xl border-dashed max-w-xl mx-auto"
+          >
+            <p className="text-zinc-400 mb-4 text-center">Have <strong className="text-zinc-200">ANY</strong> questions about our websites or how the process works?</p>
+            <a href="#contact" className="group flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2.5 rounded-full transition-all text-sm font-semibold shadow-lg">
+              Hit me up <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* AI Receptionist */}
+      <section className="py-24 px-6 relative" id="ai-receptionist">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-cyan-500/20 mb-6 border border-cyan-500/30">
+              <Bot className="w-8 h-8 text-cyan-400" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 flex items-center justify-center gap-3">
+              24/7 AI Receptionist
+            </h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto text-lg mb-8">
+              Never miss a lead again. When you miss a call, our AI receptionist picks up instead of voicemail with a perfectly natural human-like conversation.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-lg relative overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-blue-500/10 blur-3xl rounded-full" />
+            <div className="flex-1 space-y-6 relative z-10">
+              <h3 className="text-3xl font-display font-bold text-white">Stop losing thousands to missed calls.</h3>
+              
+              <div className="space-y-4">
+                <p className="text-zinc-400 text-lg leading-relaxed">
+                  A missed call could cost you <strong className="text-zinc-200">thousands of dollars</strong>. By the time you call them back, they’ve already booked with a competitor.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-zinc-950/50 border border-zinc-800/80 p-4 rounded-xl">
+                    <div className="text-cyan-400 font-bold mb-1 flex items-center gap-2">
+                      <Clock className="w-4 h-4" /> 24/7 Flow
+                    </div>
+                    <p className="text-sm text-zinc-400">Captures leads around the clock instantly.</p>
+                  </div>
+                  <div className="bg-zinc-950/50 border border-zinc-800/80 p-4 rounded-xl">
+                    <div className="text-cyan-400 font-bold mb-1 flex items-center gap-2">
+                      <Zap className="w-4 h-4" /> Zero Effort
+                    </div>
+                    <p className="text-sm text-zinc-400">Answers FAQs & books meetings directly.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-[1.5rem] p-6 relative shadow-lg mt-6">
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-5xl font-display font-bold text-white">$600</span>
+                  <span className="text-cyan-400 font-medium text-lg">/mo</span>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span className="text-zinc-300">Talks naturally and exactly like a human</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span className="text-zinc-300">Asks specific qualification questions you choose</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span className="text-zinc-300">Seamless calendar booking automation</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                    <span className="text-zinc-300"><strong>24/7 active coverage</strong> around the clock</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex-1 w-full relative z-10">
+              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative shadow-2xl overflow-hidden flex flex-col gap-6">
+                <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center relative">
+                      <div className="absolute inset-0 border border-cyan-400 rounded-full animate-ping opacity-20" />
+                      <PhoneCall className="w-5 h-5 text-cyan-400 relative z-10" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-zinc-200">Call Transferred to AI</div>
+                      <div className="text-xs text-zinc-500 font-mono mt-0.5">00:45</div>
+                    </div>
+                  </div>
+                  <div className="text-xs font-bold text-cyan-400 bg-cyan-400/10 px-3 py-1.5 rounded-full flex items-center gap-2 border border-cyan-400/20">
+                    <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" /> 24/7 ACTIVE
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-center justify-center py-4">
+                   <div className="relative flex items-center justify-center w-24 h-24 mb-6">
+                     <div className="absolute inset-0 bg-cyan-500/10 rounded-full animate-[ping_2s_ease-in-out_infinite]" />
+                     <div className="absolute inset-2 bg-cyan-500/20 rounded-full animate-[ping_2.5s_ease-in-out_infinite]" />
+                     <div className="relative w-16 h-16 bg-cyan-500/30 border-2 border-cyan-500/50 rounded-full flex items-center justify-center z-10 shadow-[0_0_15px_rgba(6,182,212,0.5)]">
+                        <Bot className="w-8 h-8 text-cyan-300" />
+                     </div>
+                   </div>
+                   
+                   <div className="flex gap-1.5 items-end h-8">
+                     {[...Array(6)].map((_, i) => (
+                       <motion.div 
+                         key={i}
+                         className="w-1.5 bg-cyan-500/80 rounded-full"
+                         animate={{ height: ["20%", "80%", "30%", "100%", "40%"] }}
+                         transition={{
+                           duration: 1.2,
+                           repeat: Infinity,
+                           repeatType: "mirror",
+                           delay: i * 0.15,
+                         }}
+                       />
+                     ))}
+                   </div>
+                </div>
+
+                <div className="bg-zinc-900 rounded-xl p-4 border border-zinc-800 space-y-3 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-50" />
+                  <div className="text-xs text-zinc-500 uppercase font-semibold tracking-wider mb-2 flex items-center gap-2">
+                    <Mic className="w-3 h-3" /> Live Transcript
+                  </div>
+                  
+                  <div className="space-y-4 text-sm font-medium">
+                    <div>
+                      <span className="text-indigo-400">Caller:</span> <span className="text-zinc-300">I'd like to get a quote for your services. Are you guys available next week?</span>
+                    </div>
+                    <div>
+                      <span className="text-cyan-400 font-bold flex items-center gap-1.5 mb-1"><Bot className="w-3 h-3"/> AI Receptionist:</span>
+                      <span className="text-white block pl-4 border-l-2 border-cyan-500/30">Absolutely! We have availability next Tuesday or Thursday. What kind of project are you looking to get a quote for? I can book an appointment on your calendar right now.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex justify-between items-center">
+                  <div className="text-xs text-zinc-500 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" /> AI is speaking...
+                  </div>
+                  <div className="text-xs text-green-400 font-medium bg-green-400/10 px-2 py-1 rounded border border-green-400/20">
+                    Lead Saved & Booked
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-16 flex flex-col items-center justify-center p-6 border border-cyan-900/30 bg-cyan-950/10 rounded-2xl border-dashed max-w-xl mx-auto"
+          >
+            <p className="text-zinc-400 mb-4 text-center">Have <strong className="text-cyan-400">ANY</strong> questions about the AI Receptionist or how it integrates?</p>
+            <a href="#contact" className="group flex items-center justify-center gap-2 bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 text-cyan-50 px-5 py-2.5 rounded-full transition-all text-sm font-semibold shadow-lg">
+              Let's chat about it <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -317,30 +496,30 @@ export default function App() {
           </motion.div>
 
           <motion.div 
-            className="grid lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
           >
-            {/* Starter */}
+            {/* Growth */}
             <motion.div 
               variants={fadeInUp}
               className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 flex flex-col hover:border-indigo-500/50 transition-colors"
             >
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2">
-                  <Star className="w-5 h-5 text-indigo-400" /> Starter <span className="text-zinc-500 text-sm font-normal">(Basic)</span>
+                  <Star className="w-5 h-5 text-indigo-400" /> Growth
                 </h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-display font-bold text-white">$275 - $350</span>
+                  <span className="text-4xl font-display font-bold text-white">$500</span>
                   <span className="text-zinc-400">/mo</span>
                 </div>
               </div>
               <ul className="space-y-4 mb-8 flex-grow">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-zinc-300"><strong className="text-white">10 posts</strong> per month</span>
+                  <span className="text-zinc-300"><strong className="text-white">15 posts</strong> per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
@@ -352,11 +531,11 @@ export default function App() {
                 </li>
               </ul>
               <a href="#contact" className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-semibold transition-colors">
-                Select Starter
+                Select Growth
               </a>
             </motion.div>
 
-            {/* Premium */}
+            {/* Scale */}
             <motion.div 
               variants={fadeInUp}
               className="bg-gradient-to-b from-indigo-500/10 to-transparent border border-indigo-500/50 rounded-[2rem] p-8 flex flex-col relative shadow-xl shadow-indigo-500/10"
@@ -368,17 +547,17 @@ export default function App() {
               </div>
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2">
-                  <Crown className="w-5 h-5 text-indigo-400" /> Premium <span className="text-zinc-400 text-sm font-normal">(Standard)</span>
+                  <Rocket className="w-5 h-5 text-indigo-400" /> Domination
                 </h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-display font-bold text-white">$495 - $585</span>
+                  <span className="text-4xl font-display font-bold text-white">$1000</span>
                   <span className="text-zinc-400">/mo</span>
                 </div>
               </div>
               <ul className="space-y-4 mb-8 flex-grow">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-zinc-300"><strong className="text-white">18–20 posts</strong> per month</span>
+                  <span className="text-zinc-300"><strong className="text-white">30 posts</strong> per month</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
@@ -394,46 +573,22 @@ export default function App() {
                 </li>
               </ul>
               <a href="#contact" className="w-full block text-center bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-xl font-semibold transition-colors shadow-lg shadow-indigo-500/25">
-                Select Premium
+                Select Domination
               </a>
             </motion.div>
-
-            {/* Platinum */}
-            <motion.div 
-              variants={fadeInUp}
-              className="bg-zinc-900/40 border border-zinc-800 rounded-[2rem] p-8 flex flex-col hover:border-indigo-500/50 transition-colors"
-            >
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-2">
-                  <Rocket className="w-5 h-5 text-indigo-400" /> Platinum <span className="text-zinc-500 text-sm font-normal">(Scale)</span>
-                </h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-display font-bold text-white">$800+</span>
-                  <span className="text-zinc-400">/mo</span>
-                </div>
-              </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-zinc-300"><strong className="text-white">30 posts</strong> per month</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-zinc-300">Comprehensive strategy & calendar</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-zinc-300">Full reputation management</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                  <span className="text-zinc-300">Story & reel creation included</span>
-                </li>
-              </ul>
-              <a href="#contact" className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white py-3 rounded-xl font-semibold transition-colors">
-                Select Platinum
-              </a>
-            </motion.div>
+          </motion.div>
+          
+          <motion.div 
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-16 flex flex-col items-center justify-center p-6 border border-indigo-900/30 bg-indigo-950/10 rounded-2xl border-dashed max-w-xl mx-auto"
+          >
+            <p className="text-zinc-400 mb-4 text-center">Have <strong className="text-indigo-400">ANY</strong> questions about social media growth or what's included?</p>
+            <a href="#contact" className="group flex items-center justify-center gap-2 bg-indigo-500/10 hover:bg-indigo-500/20 border border-indigo-500/30 text-indigo-100 px-5 py-2.5 rounded-full transition-all text-sm font-semibold shadow-lg">
+              Ask me anything <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </motion.div>
         </div>
       </section>
@@ -580,7 +735,18 @@ export default function App() {
             </div>
           </motion.div>
 
-
+          <motion.div 
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="mt-8 flex flex-col items-center justify-center p-6 border border-zinc-800/60 bg-zinc-900/30 rounded-2xl border-dashed max-w-xl mx-auto"
+          >
+            <p className="text-zinc-400 mb-4 text-center">Have <strong className="text-zinc-200">ANY</strong> questions about how we run and scale precision ad campaigns?</p>
+            <a href="#contact" className="group flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white px-5 py-2.5 rounded-full transition-all text-sm font-semibold shadow-lg">
+              Get in touch <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
