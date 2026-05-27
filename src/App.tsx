@@ -340,11 +340,11 @@ export default function App() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-blue-500/10 blur-3xl rounded-full" />
             <div className="flex-1 space-y-6 relative z-10">
-              <h3 className="text-3xl font-display font-bold text-white">Stop losing thousands to missed calls.</h3>
+              <h3 className="text-3xl font-display font-bold text-white">An investment that pays for itself.</h3>
               
               <div className="space-y-4">
                 <p className="text-zinc-400 text-lg leading-relaxed">
-                  A missed call could cost you <strong className="text-zinc-200">thousands of dollars</strong>. By the time you call them back, they’ve already booked with a competitor.
+                  Don't view this as a purchase—think of it as an <strong className="text-zinc-200">investment</strong>. A single missed call could cost you thousands in lost revenue. By the time you manually call them back, they’ve already booked with a competitor.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-zinc-950/50 border border-zinc-800/80 p-4 rounded-xl">
@@ -364,7 +364,7 @@ export default function App() {
               
               <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-[1.5rem] p-6 relative shadow-lg mt-6">
                 <div className="flex items-baseline gap-2 mb-4">
-                  <span className="text-5xl font-display font-bold text-white">$600</span>
+                  <span className="text-5xl font-display font-bold text-white">$1,000</span>
                   <span className="text-cyan-400 font-medium text-lg">/mo</span>
                 </div>
                 <ul className="space-y-4">
